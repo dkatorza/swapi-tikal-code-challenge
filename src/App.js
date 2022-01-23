@@ -7,6 +7,7 @@ function App() {
       <header className='App-header'>
         <h1>Star Wars rebel academy trials</h1>
       </header>
+      <main>Table +chart</main>
     </div>
   );
 }
