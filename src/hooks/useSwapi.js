@@ -2,10 +2,15 @@ import React from 'react';
 
 export const useSwapi = () => {
   const [vehicle, setVehicle] = useState([]);
+  const [swapiData, setSwapiData] = useState([]);
 
   useEffect(() => {
     getVehicleData();
   }, []);
+
+  useEffect(() => {
+    if (vehicle.length !== 0) getPlanetsData();
+  }, [vehicle]);
 
   //First iterate over vehicles api
   const getVehicleData = async () => {
@@ -31,5 +36,36 @@ export const useSwapi = () => {
   };
   console.log('vehicle output:', vehicle);
 
-  return <div></div>;
+  //Get Planets and pilots details based on vehicles data
+  const getPlanetsData = () => {
+    const planets = vehicle.reduce((acc, val) => {
+      const planetDetails = [];
+      let obj = {
+        vehicleName: val.name,
+        planetDetails,
+      };
+
+      // Iterate over pilot arrays and fetch pilots + homeworld details.
+      val.pilots.reduce(async (acc, val) => {
+        try {
+          const pilotResponse = await fetch(val);
+          let { name: pilotName, homeworld } = await pilotResponse.json();
+          const planetResponse = await fetch(homeworld);
+          const { name: planetName, population } = await planetResponse.json();
+          planetDetails.push({ pilotName, planetName, population });
+        } catch (err) {
+          console.log(err, 'Error with fetching planet data');
+        }
+        return acc;
+      }, []);
+
+      acc.push(obj);
+      return acc;
+    }, []);
+    setSwapiData(planets);
+  };
+
+  console.log('swapiData', swapiData);
+
+  return { swapiData };
 };
