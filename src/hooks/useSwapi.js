@@ -56,7 +56,7 @@ export const useSwapi = () => {
         const { name: pilotName, homeworld } = await pilotResponse.json();
         const planetResponse = await fetch(homeworld);
         const { name: planetName, population } = await planetResponse.json();
-        const planetPop = [];
+
         // Build arrays
         planetDetails.push({
           vehicleName,
@@ -73,6 +73,7 @@ export const useSwapi = () => {
     }, Promise.resolve([]));
 
     setMergedData(totalData);
+    return totalData;
   };
 
   // Go through the arrays and combine the duplicate vehicleName keys
@@ -114,5 +115,5 @@ export const useSwapi = () => {
     setSwapiData(mappedVehicles);
   };
 
-  return swapiData;
+  return { swapiData, mergedData };
 };

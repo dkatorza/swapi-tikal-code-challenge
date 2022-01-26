@@ -11,7 +11,7 @@ html {
 
 body {
   overflow: hidden;
-  background: $clrWhite;
+  background: $clrSmokeWhite;
   background-size: cover;
 }
 
@@ -41,26 +41,9 @@ a {
   text-decoration: none;
 }
 
-.button {
-  background-color: $primary;
-  margin-left: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: rem(16px);
-  font-weight: 600;
-  color: $clrWhite;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $primaryHover;
-    transition: 0.4s;
-  }
-}
-
 .scroller {
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 
     @include for-mobile-layout {
       width: 0;
@@ -68,11 +51,21 @@ a {
   }
   &::-webkit-scrollbar-track {
     border-radius: 5px;
-    // margin-bottom: 14px;
-    background-color: rgba(133, 133, 133, 0.349);
+    // margin: 14px;
+    background-color: $clrBlack;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $mainPropdoColor;
+    background-color: $clrYellow;
     border-radius: 5px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 00.5rem;
+  h1 {
+    font-family: Star-Wars;
   }
 }

@@ -1,0 +1,15 @@
+.tableData {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $clrWhite;
+
+  & > * td,
+  th {
+    border: 1px solid black;
+    padding: 0.5rem;
+
+    & > :not(:nth-child(1)) {
+      white-space: pre;
+    }
+  }
+}

@@ -1,9 +1,7 @@
 import React from 'react';
 
 export const SwapiList = ({ data }) => {
-  console.log('data', data);
-
-  if (!data) return <div>loading the force..</div>;
+  if (!data.length) return <div>loading the force..</div>;
 
   return (
     <table className='tableData'>

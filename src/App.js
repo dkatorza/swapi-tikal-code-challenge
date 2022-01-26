@@ -4,18 +4,18 @@ import { useSwapi } from '../src/hooks/useSwapi';
 import { SwapiChart } from './cmps/SwapiChart';
 import { SwapiList } from './cmps/SwapiList';
 function App() {
-  const swapiData = useSwapi();
+  const { swapiData } = useSwapi();
 
   if (!swapiData) return <div>loading...</div>;
   return (
-    <div className='app-general'>
+    <div className='app-general scroller'>
       <header className='App-header'>
         <h1>Star Wars rebel academy trials</h1>
       </header>
       <main>
         <section>{<SwapiList data={swapiData} />}</section>
         <section>
-          <SwapiChart />
+          <SwapiChart data={swapiData} />
         </section>
       </main>
     </div>

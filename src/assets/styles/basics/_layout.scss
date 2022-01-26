@@ -1,13 +1,8 @@
 .app-general {
   height: calc(100vh);
-  position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.main-wrapper {
-  max-height: calc(90vh);
   padding: 0.5rem;
 }
