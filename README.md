@@ -1,5 +1,7 @@
 # Tikal Code Challenge
 
+# Live  http://swapi2.netlify.app
+
 Greetings challenger, and welcome to the Star Wars rebel academy trials.
 The following challenge is related to the Star Wars story.
 This Star Wars API is an API that provides data regarding all Star Wars films and provides the
