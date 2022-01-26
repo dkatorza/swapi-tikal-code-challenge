@@ -25,19 +25,20 @@ export const SwapiChart = () => {
       <tbody>
         <tr />
         <tr className='bars'>
-          {chartWithRatio.map((chart, idx) => {
-            return (
-              <td className='bar' key={idx}>
-                <span>{chart.population}</span>
-                <div
-                  className='bar-color'
-                  style={{
-                    height: `${chart.ratio}%`,
-                  }}></div>
-                <p>{chart.name}</p>
-              </td>
-            );
-          })}
+          {chartWithRatio &&
+            chartWithRatio.map((chart, idx) => {
+              return (
+                <td className='bar' key={idx}>
+                  <span>{chart.population}</span>
+                  <div
+                    className='bar-color'
+                    style={{
+                      height: `${chart.ratio}%`,
+                    }}></div>
+                  <p>{chart.name}</p>
+                </td>
+              );
+            })}
         </tr>
       </tbody>
     </table>

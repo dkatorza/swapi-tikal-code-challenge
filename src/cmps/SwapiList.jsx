@@ -11,7 +11,7 @@ export const SwapiList = ({ data }) => {
           <td>Vehicle name with the largest sum</td>
           {data.map((v, idx) => (
             <td key={idx}>
-              <li>{v.vehicleName}</li>
+              <li key={idx}>{v.vehicleName}</li>
             </td>
           ))}
         </tr>
@@ -20,8 +20,8 @@ export const SwapiList = ({ data }) => {
           {data.map((p, idx) => (
             <td key={idx}>
               {Array.isArray(p.planetName)
-                ? p.planetPop.map((s) => (
-                    <li>
+                ? p.planetPop.map((s, idx) => (
+                    <li key={idx}>
                       {s[0]}: {s[1]}
                     </li>
                   ))
@@ -34,7 +34,7 @@ export const SwapiList = ({ data }) => {
           {data.map((p, idx) => (
             <td key={idx}>
               {Array.isArray(p.pilotName)
-                ? p.pilotName.map((s) => <li>{s}</li>)
+                ? p.pilotName.map((s, idx) => <li key={idx}>{s}</li>)
                 : p.pilotName}
             </td>
           ))}
