@@ -18,7 +18,7 @@ export const useChartData = () => {
       const { results } = await response.json();
       const [data] = await results;
       const { name, population } = data;
-      planetDetails.push({ name, population });
+      planetDetails.push({ name, population: Number(population) });
 
       return planetDetails;
     }, Promise.resolve([]));

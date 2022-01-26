@@ -2,10 +2,11 @@
   width: 100%;
   border-collapse: collapse;
   background-color: $clrWhite;
+  box-shadow: 5px 10px;
 
   & > * td,
   th {
-    border: 1px solid black;
+    border: 1px solid rgba(197, 197, 197, 0.185);
     padding: 0.5rem;
 
     & > :not(:nth-child(1)) {

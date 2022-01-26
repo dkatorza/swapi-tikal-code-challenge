@@ -13,7 +13,9 @@ function App() {
         <h1>Star Wars rebel academy trials</h1>
       </header>
       <main>
-        <section>{<SwapiList data={swapiData} />}</section>
+        <section>
+          <SwapiList data={swapiData} />
+        </section>
         <section>
           <SwapiChart data={swapiData} />
         </section>
